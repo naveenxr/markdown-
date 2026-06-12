@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Dark Mode (Default Theme) */
+  --bg-primary: hsl(224, 25%, 8%);
+  --bg-secondary: hsl(224, 25%, 12%);
+  --bg-tertiary: hsl(224, 25%, 16%);
+  
+  --glass-bg: rgba(13, 17, 30, 0.75);
+  --glass-bg-hover: rgba(22, 28, 48, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-glow: rgba(99, 102, 241, 0.3);
+  
+  --text-primary: hsl(210, 40%, 98%);
+  --text-secondary: hsl(215, 20%, 75%);
+  --text-tertiary: hsl(215, 15%, 55%);
+  
+  --accent-primary: hsl(250, 95%, 65%);
+  --accent-glow: rgba(99, 102, 241, 0.2);
+  --accent-secondary: hsl(180, 100%, 45%);
+  --accent-secondary-glow: rgba(0, 242, 254, 0.2);
+  
+  --danger: hsl(0, 85%, 60%);
+  --danger-glow: rgba(239, 68, 68, 0.2);
+  --success: hsl(142, 70%, 50%);
+  --warning: hsl(45, 90%, 55%);
+  
+  --code-bg: hsl(224, 25%, 5%);
+  --border-color: hsl(224, 20%, 18%);
+  --border-color-light: hsl(224, 20%, 25%);
+  
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.25);
+  
+  --scrollbar-track: hsl(224, 25%, 6%);
+  --scrollbar-thumb: hsl(224, 20%, 22%);
+  --scrollbar-thumb-hover: hsl(224, 20%, 30%);
+  
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-content: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Fira Code', 'JetBrains Mono', ui-monospace, Consolas, monospace;
+}
+
+:root.light-theme {
+  /* Light Mode */
+  --bg-primary: hsl(210, 40%, 97%);
+  --bg-secondary: hsl(0, 0%, 100%);
+  --bg-tertiary: hsl(210, 30%, 93%);
+  
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-bg-hover: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-border-glow: rgba(79, 70, 229, 0.2);
+  
+  --text-primary: hsl(224, 25%, 12%);
+  --text-secondary: hsl(220, 15%, 38%);
+  --text-tertiary: hsl(220, 10%, 55%);
+  
+  --accent-primary: hsl(250, 85%, 58%);
+  --accent-glow: rgba(79, 70, 229, 0.1);
+  --accent-secondary: hsl(190, 95%, 40%);
+  --accent-secondary-glow: rgba(14, 116, 144, 0.1);
+  
+  --danger: hsl(0, 75%, 50%);
+  --danger-glow: rgba(220, 38, 38, 0.1);
+  --success: hsl(142, 60%, 40%);
+  --warning: hsl(38, 90%, 45%);
+  
+  --code-bg: hsl(210, 20%, 94%);
+  --border-color: hsl(210, 20%, 86%);
+  --border-color-light: hsl(210, 20%, 90%);
+  
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 24px rgba(149, 157, 165, 0.15);
+  --shadow-lg: 0 16px 48px rgba(149, 157, 165, 0.25);
+  --shadow-glow: 0 0 20px rgba(79, 70, 229, 0.15);
+  
+  --scrollbar-track: hsl(210, 30%, 95%);
+  --scrollbar-thumb: hsl(210, 20%, 82%);
+  --scrollbar-thumb-hover: hsl(210, 20%, 72%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.1s ease;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 5px;
+  border: 2px solid var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Button & interactive states resets */
+button, input, textarea, select {
+  font-family: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: var(--accent-secondary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
